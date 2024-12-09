@@ -60,7 +60,8 @@ body{
     padding:0 !important;
 }
 .card-img-top{
-    border-radius: 1rem;
+    border-radius: 0.5rem;
+    height: 200px !important;
     width: 100% !important;
     object-fit: cover !important;
 }

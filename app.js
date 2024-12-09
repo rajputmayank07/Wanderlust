@@ -10,8 +10,8 @@ const path = require("path");
 const methodOverride = require("method-override");
 const ejsMate= require("ejs-mate");
 const ExpressError= require("./utils/ExpressError.js");
-// const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
-const dbURL=process.env.ATLASDB_URL;
+ const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+//const dbURL=process.env.ATLASDB_URL;
 
 const listingRouter=require("./routes/listing.js");
 const reviewRouter=require("./routes/review.js");
@@ -35,7 +35,8 @@ main()
   });
 
 async function main() {
-  await mongoose.connect(dbURL);
+  //await mongoose.connect(dbURL);
+  await mongoose.connect(MONGO_URL);
 }
 
 app.set("view engine", "ejs");
@@ -46,7 +47,8 @@ app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public")));
 
 const store=MongoStore.create({
-  mongoUrl:dbURL,
+  //mongoUrl:dbURL,
+  mongoUrl:MONGO_URL, 
   crypto:{
     secret: process.env.SECRET,
   },
@@ -94,20 +96,6 @@ app.use((req,res,next)=>{
 app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
-
-// app.get("/testListing", async (req, res) => {
-//   let sampleListing = new Listing({
-//     title: "My New Villa",
-//     description: "By the beach",
-//     price: 1200,
-//     location: "Calangute, Goa",
-//     country: "India",
-//   });
-
-//   await sampleListing.save();
-//   console.log("sample was saved");
-//   res.send("successful testing");
-// });
 
 app.all("*",(req,res,next)=>{
   next(new ExpressError(404,"Page Not Found!"));
