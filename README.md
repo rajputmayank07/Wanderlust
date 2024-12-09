@@ -130,7 +130,7 @@ If you'd like to contribute:
 
 ## Author
 
-- Mayank Singh(https://github.com/rajputmayank07)
+- Mayank Singh (https://github.com/rajputmayank07)
 
 ---
 
