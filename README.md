@@ -52,7 +52,7 @@ Before running the project, ensure the following are installed:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/wanderlust.git
+   git clone https://github.com/rajputmayank07/Wanderlust
    cd wanderlust
 
 2. **Install dependencies**:
@@ -98,7 +98,7 @@ If you'd like to contribute:
 
 1. **Fork the repository**:
    ```bash
-   git clone https://github.com/your-repo/wanderlust.git
+   git clone https://github.com/rajputmayank07/Wanderlust
    ```
 
 2. **Create a new branch**:
@@ -130,7 +130,7 @@ If you'd like to contribute:
 
 ## Author
 
-- Mayank Singh(https://github.com/your-profile)
+- Mayank Singh(https://github.com/rajputmayank07)
 
 ---
 
